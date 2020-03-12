@@ -29,10 +29,8 @@ app.post("/form", function(req, res) {
     {
       from: from,
       to: [contactAddress],
-      subject: "Caltech web form",
-      html:
-        `NAME: ${from} EMAIL: ${email} SUBJECT: ${subject} MESSAGE: ${message}` ||
-        "[No message]"
+      subject: "[Caltech web form]",
+      html: `NAME: ${from} EMAIL: ${email} MESSAGE: ${message}`
     },
     function(err, info) {
       if (err) return res.status(500).send(err);
